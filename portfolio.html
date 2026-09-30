@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="YashWebs creates premium, fast and conversion-focused websites for businesses, brands and creators.">
+<meta name="theme-color" content="#080507">
+<title>YashWebs — Websites That Make Businesses Look Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --bg:#080507;--panel:#12090b;--panel2:#180b0e;--text:#fff7f7;--muted:#b7a4a7;
+  --line:rgba(255,80,80,.18);--accent:#ff2b2b;--accent2:#ff5a36;--green:#ffb3a7;
+  --pink:#ff1744;--ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+::selection{background:var(--accent);color:#fff}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+radial-gradient(circle at 15% 10%,rgba(229,9,20,.15),transparent 28%),
+radial-gradient(circle at 85% 20%,rgba(255,61,46,.10),transparent 25%),
+radial-gradient(circle at 50% 100%,rgba(255,23,68,.08),transparent 32%)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.25;pointer-events:none;background-image:
+linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:70px 70px;
+mask-image:linear-gradient(to bottom,black,transparent 75%)}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent),var(--pink));z-index:9999}
+.nav{height:78px;position:fixed;top:0;left:0;right:0;z-index:1000;transition:.4s var(--ease)}
+.nav.scrolled{background:rgba(8,5,7,.86);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font:800 19px Manrope;letter-spacing:-.04em}
+.logo-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent2),var(--accent));box-shadow:0 12px 35px rgba(229,9,20,.25)}
+.logo-mark span{font:800 15px Manrope}
+.links{display:flex;gap:4px;align-items:center;padding:5px;border:1px solid var(--line);border-radius:99px;background:rgba(255,255,255,.03)}
+.links a{font-size:11px;font-weight:700;color:#a8abb9;padding:9px 13px;border-radius:99px;transition:.25s}
+.links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-cta,.hero-buttons a,.service-cta{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.nav-cta{font-size:11px;font-weight:800;padding:11px 16px;border-radius:11px;background:#fff;color:#09090b}
+.menu{display:none;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;width:42px;height:42px;border-radius:12px}
+.hero{min-height:100svh;padding:145px 0 65px;display:grid;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(229,9,20,.35);border-radius:99px;background:rgba(229,9,20,.08);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffb3b3}
+.badge i{font-size:7px;color:var(--green);text-shadow:0 0 15px var(--green)}
+h1{font:800 clamp(58px,8vw,104px)/.9 Manrope;letter-spacing:-.075em;margin:25px 0}
+.gradient{background:linear-gradient(100deg,#fff 5%,#d8d2ff 28%,#ff3b30 48%,#ff806f 76%,#fff);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 8s ease-in-out infinite}
+@keyframes flow{50%{background-position:100% center}}
+.hero-copy{max-width:590px;color:var(--muted);font-size:16px;line-height:1.9}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.hero-buttons a{padding:14px 19px;border-radius:12px;font-size:11px;font-weight:900}
+.primary{background:#fff;color:#08080a}
+.secondary{border:1px solid var(--line);background:rgba(255,255,255,.035);color:#e8e8ee}
+.hero-proof{display:flex;gap:28px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.proof strong{display:block;font:800 25px Manrope;letter-spacing:-.05em}.proof span{font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.hero-art{min-height:540px;display:grid;place-items:center;position:relative}
+.glow{position:absolute;width:370px;height:370px;border-radius:50%;background:conic-gradient(var(--accent2),var(--accent),var(--pink),var(--accent2));filter:blur(75px);opacity:.28;animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.browser{position:relative;width:min(480px,100%);border:1px solid rgba(255,255,255,.15);border-radius:25px;overflow:hidden;background:#0b0d12;box-shadow:0 40px 120px rgba(0,0,0,.55);transform:rotate(2deg);transition:.6s var(--ease)}
+.browser:hover{transform:rotate(0) translateY(-8px)}
+.browser-top{display:flex;align-items:center;gap:6px;padding:13px 15px;border-bottom:1px solid var(--line);background:#101218}
+.browser-top i{width:8px;height:8px;border-radius:50%;background:#ff5f57}.browser-top i:nth-child(2){background:#ffbd2e}.browser-top i:nth-child(3){background:#28c840}
+.address{margin-left:10px;flex:1;background:#08090d;border:1px solid var(--line);border-radius:99px;padding:5px 11px;font-size:8px;color:#747887}
+.site-preview{height:365px;padding:26px;position:relative;overflow:hidden;background:
+radial-gradient(circle at 15% 15%,rgba(255,61,46,.20),transparent 35%),
+radial-gradient(circle at 90% 80%,rgba(229,9,20,.25),transparent 40%),#090b10}
+.mock-nav{display:flex;justify-content:space-between;align-items:center;font-size:8px;color:#a8abb7}
+.mock-logo{font:800 13px Manrope;color:#fff}.mock-pill{border:1px solid var(--line);border-radius:99px;padding:5px 8px}
+.mock-content{margin-top:52px}.mock-kicker{font-size:7px;color:#ff806f;letter-spacing:.18em;text-transform:uppercase}
+.mock-title{font:800 41px/.9 Manrope;letter-spacing:-.07em;margin-top:10px}.mock-title span{color:#ff3b30}
+.mock-lines{display:grid;gap:6px;margin-top:17px}.mock-lines b{height:5px;border-radius:99px;background:#272b35;display:block}.mock-lines b:first-child{width:72%}.mock-lines b:nth-child(2){width:53%}.mock-lines b:nth-child(3){width:38%}
+.mock-card{position:absolute;right:25px;bottom:24px;width:135px;height:82px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.03));backdrop-filter:blur(10px);padding:12px}
+.mock-card small{font-size:7px;color:#8e92a1}.mock-card strong{display:block;font:800 20px Manrope;margin-top:7px}
+.float-tag{position:absolute;padding:10px 13px;border:1px solid var(--line);border-radius:13px;background:rgba(18,8,10,.88);backdrop-filter:blur(14px);font-size:9px;font-weight:800;box-shadow:0 20px 50px rgba(0,0,0,.3);animation:float 5s ease-in-out infinite}
+.float-tag.one{top:13%;left:-2%;color:#ff806f}.float-tag.two{right:-3%;top:28%;color:#ffb3b3;animation-delay:-1.7s}.float-tag.three{bottom:14%;left:3%;color:#ff9b8d;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:rgba(255,255,255,.025)}
+.marquee-track{display:flex;width:max-content;animation:marquee 25s linear infinite}
+.marquee span{padding:17px 26px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#8d91a1}.marquee b{color:#ff3b30;margin-left:20px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:125px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:55px}
+.eyebrow{font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:#ff3b30}
+.section-head h2{font:800 clamp(45px,6vw,78px)/.9 Manrope;letter-spacing:-.07em;margin-top:12px}
+.section-head p{max-width:410px;color:var(--muted);font-size:13px;line-height:1.9}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.service{padding:31px;border:1px solid var(--line);border-radius:23px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));min-height:280px;position:relative;overflow:hidden;transition:.55s var(--ease)}
+.service:hover{transform:translateY(-8px);border-color:rgba(229,9,20,.55);box-shadow:0 25px 70px rgba(229,9,20,.10)}
+.service:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-80px;top:-80px;background:var(--accent);filter:blur(50px);opacity:.12}
+.icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;border:1px solid rgba(229,9,20,.4);background:rgba(229,9,20,.12);color:#ffb3b3}
+.service h3{font:700 21px Manrope;margin-top:22px}.service p{font-size:12px;color:var(--muted);line-height:1.8;margin-top:9px}.service ul{list-style:none;margin-top:18px;display:grid;gap:6px}.service li{font-size:10px;color:#c8cad4}.service li:before{content:"✓";color:var(--green);margin-right:8px}
+.showcase{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.work{border:1px solid var(--line);border-radius:25px;overflow:hidden;background:var(--panel);transition:.55s var(--ease)}
+.work:hover{transform:translateY(-7px);border-color:rgba(255,61,46,.35);box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.work-image{height:290px;padding:22px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 20%,rgba(255,61,46,.22),transparent 35%),radial-gradient(circle at 80% 90%,rgba(229,9,20,.24),transparent 42%),#0a0c12}
+.work-image.restaurant{background:radial-gradient(circle at 80% 20%,rgba(255,23,68,.22),transparent 35%),radial-gradient(circle at 15% 85%,rgba(229,9,20,.23),transparent 45%),#0d090d}
+.work-image.store{background:radial-gradient(circle at 20% 20%,rgba(94,234,212,.20),transparent 35%),radial-gradient(circle at 90% 90%,rgba(255,61,46,.20),transparent 42%),#07100f}
+.mini-browser{height:100%;border:1px solid rgba(255,255,255,.12);border-radius:17px;background:rgba(7,8,12,.75);overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.35)}
+.mini-head{height:27px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:4px;padding:0 9px}.mini-head i{width:5px;height:5px;border-radius:50%;background:#ff5f57}.mini-head i:nth-child(2){background:#ffbd2e}.mini-head i:nth-child(3){background:#28c840}
+.mini-body{padding:22px}.mini-label{font-size:6px;letter-spacing:.15em;color:#ff806f;text-transform:uppercase}.mini-h{font:800 28px/.95 Manrope;letter-spacing:-.06em;margin-top:8px}.mini-h span{color:#ff3b30}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.mini-box{height:60px;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border:1px solid var(--line)}
+.work-info{padding:25px 27px 28px}.work-type{font-size:9px;color:#ff806f;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.work h3{font:800 27px Manrope;letter-spacing:-.05em;margin-top:7px}.work p{font-size:12px;color:var(--muted);line-height:1.8;margin-top:7px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.step{padding:27px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025);position:relative}.step-num{font:800 11px Manrope;color:#ff3b30}.step h3{font:700 18px Manrope;margin-top:25px}.step p{font-size:11px;color:var(--muted);line-height:1.8;margin-top:7px}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.price{border:1px solid var(--line);border-radius:24px;padding:30px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));position:relative}.price.special{border-color:rgba(255,61,46,.75);box-shadow:0 25px 90px rgba(255,61,46,.15);background:linear-gradient(145deg,rgba(255,61,46,.10),rgba(255,255,255,.015))}.price.featured{border-color:rgba(229,9,20,.65);box-shadow:0 25px 90px rgba(229,9,20,.12)}.tag{position:absolute;right:20px;top:20px;padding:6px 9px;border-radius:99px;background:#e50914;color:#fff;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}.price h3{font:700 21px Manrope}.price .amount{font:800 43px Manrope;letter-spacing:-.07em;margin:18px 0 3px}.price .amount small{font:500 11px DM Sans;color:var(--muted);letter-spacing:0}.price p{font-size:11px;color:var(--muted)}.price ul{list-style:none;display:grid;gap:9px;margin:23px 0}.price li{font-size:10px;color:#cfd0d8}.price li:before{content:"✓";color:var(--green);margin-right:8px}.price a{display:flex;justify-content:center;padding:12px;border-radius:11px;background:rgba(255,255,255,.07);font-size:10px;font-weight:900;border:1px solid var(--line)}.featured a{background:#fff;color:#09090b}
+.cta{padding:75px 55px;border:1px solid rgba(229,9,20,.38);border-radius:30px;background:radial-gradient(circle at 10% 10%,rgba(255,61,46,.15),transparent 35%),radial-gradient(circle at 90% 90%,rgba(229,9,20,.18),transparent 40%),rgba(255,255,255,.025);display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font:800 clamp(38px,5vw,65px)/.95 Manrope;letter-spacing:-.07em}.cta p{max-width:510px;color:var(--muted);font-size:13px;margin-top:13px}.cta a{white-space:nowrap;padding:15px 21px;background:#fff;color:#08080a;border-radius:12px;font-size:11px;font-weight:900}
+footer{padding:35px 0;border-top:1px solid var(--line)}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-copy{font-size:10px;color:#777b89}.footer-links{display:flex;gap:15px}.footer-links a{font-size:10px;color:#b7a4a7}.footer-links a:hover{color:#fff}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.links{position:fixed;top:70px;left:20px;right:20px;display:grid;grid-template-columns:1fr 1fr;border-radius:20px;padding:10px;background:rgba(18,7,9,.97);opacity:0;visibility:hidden;transform:translateY(-10px);transition:.3s}.links.open{opacity:1;visibility:visible;transform:none}.menu{display:block}.nav-cta{display:none}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:460px}.services,.pricing{grid-template-columns:1fr 1fr}.process{grid-template-columns:1fr 1fr}.cta{flex-direction:column;align-items:flex-start}}
+@media(max-width:650px){.container{width:min(100% - 28px,1180px)}section{padding:90px 0}.hero{padding-top:125px}.hero-proof{gap:17px}.proof strong{font-size:21px}.hero-art{min-height:390px}.browser{width:95%}.site-preview{height:290px}.float-tag{font-size:8px;padding:8px 10px}.section-head{display:block;margin-bottom:38px}.section-head p{margin-top:16px}.services,.showcase,.pricing,.process{grid-template-columns:1fr}.work-image{height:245px}.cta{padding:45px 25px}.cta a{width:100%;text-align:center}.footer-inner{display:block}.footer-links{margin-top:12px}.marquee span{padding:15px 18px;font-size:8px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top"><span class="logo-mark"><span>Y</span></span>YashWebs</a>
+    <div class="links" id="links">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="mailto:theyashwebs@gmail.com?subject=Website%20Project%20Inquiry">Start a project <i class="fa-solid fa-arrow-right"></i></a>
+    <button class="menu" id="menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="badge"><i class="fa-solid fa-circle"></i> Websites built for business</div>
+      <h1>Make your business <span class="gradient">look impossible to ignore.</span></h1>
+      <p class="hero-copy">YashWebs creates modern, fast and conversion-focused websites that turn visitors into customers. From businesses and restaurants to birthdays, weddings and special events, we build digital experiences designed to look premium and work beautifully on every screen.</p>
+      <div class="hero-buttons">
+        <a class="primary" href="#work">Explore our work <i class="fa-solid fa-arrow-down"></i></a>
+        <a class="secondary" href="mailto:theyashwebs@gmail.com?subject=I%20want%20a%20website">Get a website <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof"><strong>Fast</strong><span>Performance</span></div>
+        <div class="proof"><strong>Mobile</strong><span>First design</span></div>
+        <div class="proof"><strong>Built</strong><span>For conversion</span></div>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="glow"></div>
+      <div class="float-tag one"><i class="fa-solid fa-bolt"></i> Fast & responsive</div>
+      <div class="float-tag two"><i class="fa-solid fa-wand-magic-sparkles"></i> Premium design</div>
+      <div class="float-tag three"><i class="fa-solid fa-mobile-screen"></i> Mobile first</div>
+      <div class="browser">
+        <div class="browser-top"><i></i><i></i><i></i><div class="address">yourbusiness.com</div></div>
+        <div class="site-preview">
+          <div class="mock-nav"><div class="mock-logo">YOUR BRAND</div><div class="mock-pill">Book now</div></div>
+          <div class="mock-content"><div class="mock-kicker">Designed to stand out</div><div class="mock-title">Your business.<br><span>Better online.</span></div><div class="mock-lines"><b></b><b></b><b></b></div></div>
+          <div class="mock-card"><small>Website experience</small><strong>10/10</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee"><div class="marquee-track">
+  <span>Business websites <b>✦</b></span><span>Landing pages <b>✦</b></span><span>Restaurant websites <b>✦</b></span><span>Portfolio websites <b>✦</b></span><span>E-commerce <b>✦</b></span><span>Web redesigns <b>✦</b></span><span>Birthday websites <b>✦</b></span><span>Wedding websites <b>✦</b></span><span>Event websites <b>✦</b></span>
+  <span>Business websites <b>✦</b></span><span>Landing pages <b>✦</b></span><span>Restaurant websites <b>✦</b></span><span>Portfolio websites <b>✦</b></span><span>E-commerce <b>✦</b></span><span>Web redesigns <b>✦</b></span><span>Birthday websites <b>✦</b></span><span>Wedding websites <b>✦</b></span><span>Event websites <b>✦</b></span>
+</div></div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">What we build</div><h2>Websites with a <span class="gradient">purpose.</span></h2></div><p>Not just a pretty page. Every part is designed to make your business easier to discover, trust and contact.</p></div>
+    <div class="services">
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-store"></i></div><h3>Business Websites</h3><p>Professional websites that establish credibility and make your business easy to understand.</p><ul><li>Custom responsive design</li><li>Services & contact sections</li><li>Google-ready structure</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-utensils"></i></div><h3>Restaurant & Cafe</h3><p>Beautiful food-focused experiences built to turn visitors into reservations, calls and walk-ins.</p><ul><li>Menu showcase</li><li>Location & booking CTA</li><li>Mobile-first experience</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-commerce</h3><p>Clean online stores that showcase products clearly and create a smooth shopping journey.</p><ul><li>Product-focused layouts</li><li>Cart & checkout-ready UI</li><li>Responsive storefront</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-bullseye"></i></div><h3>Landing Pages</h3><p>Focused pages built around one goal: getting the visitor to take action.</p><ul><li>Strong visual hierarchy</li><li>Clear calls to action</li><li>Campaign-ready layouts</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-pen-ruler"></i></div><h3>Website Redesign</h3><p>Turn an outdated website into a modern experience without losing the identity of your brand.</p><ul><li>Modern visual system</li><li>Better mobile UX</li><li>Clearer content structure</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Custom Web Builds</h3><p>Unique interactive experiences for brands that need more than a template.</p><ul><li>Custom interactions</li><li>Modern frontend development</li><li>Scalable structure</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-cake-candles"></i></div><h3>Birthday Websites</h3><p>Fun, personal and memorable mini-sites for birthdays, surprises and special celebrations.</p><ul><li>Photo & memory sections</li><li>Countdowns & messages</li><li>Shareable mobile design</li></ul></article>
+      <article class="service reveal"><div class="icon"><i class="fa-solid fa-heart"></i></div><h3>Wedding Websites</h3><p>Elegant digital invitations and wedding hubs for couples and families.</p><ul><li>Event details & schedule</li><li>Gallery & story</li><li>Maps, RSVP & contact</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Selected concepts</div><h2>Ideas turned into <span class="gradient">websites.</span></h2></div><p>A glimpse at the kinds of digital experiences YashWebs can create for different businesses.</p></div>
+    <div class="showcase">
+      <article class="work reveal"><div class="work-image restaurant"><div class="mini-browser"><div class="mini-head"><i></i><i></i><i></i></div><div class="mini-body"><div class="mini-label">Restaurant experience</div><div class="mini-h">Taste.<br><span>Remembered.</span></div><div class="mini-grid"><div class="mini-box"></div><div class="mini-box"></div></div></div></div></div><div class="work-info"><div class="work-type">Restaurant / Hospitality</div><h3>Dining experience</h3><p>A visual-first website concept designed around food, atmosphere, reservations and location.</p></div></article>
+      <article class="work reveal"><div class="work-image"><div class="mini-browser"><div class="mini-head"><i></i><i></i><i></i></div><div class="mini-body"><div class="mini-label">Business website</div><div class="mini-h">Built to<br><span>be trusted.</span></div><div class="mini-grid"><div class="mini-box"></div><div class="mini-box"></div></div></div></div></div><div class="work-info"><div class="work-type">Local Business</div><h3>Business presence</h3><p>A polished digital home for businesses that need credibility, clarity and more enquiries.</p></div></article>
+      <article class="work reveal"><div class="work-image store"><div class="mini-browser"><div class="mini-head"><i></i><i></i><i></i></div><div class="mini-body"><div class="mini-label">E-commerce concept</div><div class="mini-h">Shop<br><span>beautifully.</span></div><div class="mini-grid"><div class="mini-box"></div><div class="mini-box"></div></div></div></div></div><div class="work-info"><div class="work-type">E-commerce</div><h3>Online storefront</h3><p>A clean shopping experience that puts products first and keeps the path to purchase simple.</p></div></article>
+      <article class="work reveal"><div class="work-image"><div class="mini-browser"><div class="mini-head"><i></i><i></i><i></i></div><div class="mini-body"><div class="mini-label">Landing page</div><div class="mini-h">One goal.<br><span>One action.</span></div><div class="mini-grid"><div class="mini-box"></div><div class="mini-box"></div></div></div></div></div><div class="work-info"><div class="work-type">Marketing / Landing Page</div><h3>Conversion page</h3><p>A focused layout built around a single message, strong CTA and friction-free user journey.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">How it works</div><h2>Simple process. <span class="gradient">Strong result.</span></h2></div><p>From the first message to launch, the process stays clear and focused on getting your business online.</p></div>
+    <div class="process">
+      <div class="step reveal"><div class="step-num">01 / DISCOVER</div><h3>Understand</h3><p>We learn about your business, audience, goals and the action you want visitors to take.</p></div>
+      <div class="step reveal"><div class="step-num">02 / DESIGN</div><h3>Shape</h3><p>The visual direction, layout and content structure are designed around your brand.</p></div>
+      <div class="step reveal"><div class="step-num">03 / BUILD</div><h3>Develop</h3><p>The approved direction becomes a responsive, interactive and polished website.</p></div>
+      <div class="step reveal"><div class="step-num">04 / LAUNCH</div><h3>Go live</h3><p>Final checks, optimisation and deployment—then your business has a new digital home.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-head reveal"><div><div class="eyebrow">Straightforward pricing</div><h2>Start with what <span class="gradient">you need.</span></h2></div><p>Clear starting points for different business stages. Every project can be customised after we understand your requirements.</p></div>
+    <div class="pricing">
+      <article class="price special reveal"><div class="tag">Special Offer</div><h3>Birthday Website</h3><div class="amount">₹2K<small> / special price</small></div><p>A memorable website for birthdays, surprises and special celebrations.</p><ul><li>Custom birthday design</li><li>Photos & memories section</li><li>Countdown & special messages</li><li>Mobile-friendly & shareable</li></ul><a href="mailto:theyashwebs@gmail.com?subject=₹2K%20Birthday%20Website">Get it for ₹2K</a></article>
+      <article class="price special reveal"><div class="tag">Special Offer</div><h3>Portfolio Website</h3><div class="amount">₹2K<small> / special price</small></div><p>A clean, modern portfolio to showcase your work, skills and projects.</p><ul><li>Personalised portfolio design</li><li>Projects & skills sections</li><li>Responsive mobile design</li><li>Contact / social links</li></ul><a href="mailto:theyashwebs@gmail.com?subject=₹2K%20Portfolio%20Website">Get it for ₹2K</a></article>
+      <article class="price featured reveal"><div class="tag">Popular</div><h3>Business</h3><div class="amount">₹8K<small> / starting</small></div><p>For businesses that want a stronger and more polished website.</p><ul><li>Multi-section website</li><li>Premium custom design</li><li>Mobile optimisation</li><li>Interactive sections</li><li>Strong contact CTA</li></ul><a href="mailto:theyashwebs@gmail.com?subject=₹8K%20Website%20Inquiry">Start at ₹8K</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="cta reveal"><div><div class="eyebrow">Have a business that deserves better?</div><h2>Let's build your <span class="gradient">website.</span></h2><p>Tell us what you do, what you need and what you want your website to achieve. We'll take it from there.</p></div><a href="mailto:theyashwebs@gmail.com?subject=New%20YashWebs%20Project">Start a project <i class="fa-solid fa-arrow-right"></i></a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div><a class="logo" href="#top"><span class="logo-mark"><span>Y</span></span>YashWebs</a><div class="footer-copy">Websites for businesses, brands, celebrations & events.</div></div>
+    <div class="footer-links"><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="mailto:theyashwebs@gmail.com">theyashwebs@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'), menu=document.getElementById('menu'), links=document.getElementById('links'), progress=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>25);
+  const h=document.documentElement.scrollHeight-innerHeight;
+  progress.style.width=(h>0?(scrollY/h)*100:0)+'%';
+},{passive:true});
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
