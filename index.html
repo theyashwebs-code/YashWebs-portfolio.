@@ -155,6 +155,24 @@ footer{padding:72px 0 max(36px,env(safe-area-inset-bottom))}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--e),transform .8s var(--e)}
 .rv.show{opacity:1;transform:none}
 
+
+/* contact + icons + fab */
+.bi{width:18px;height:18px;flex:none;fill:currentColor}
+.btn.wa{background:#25d366;color:#04230f}
+@media(hover:hover){.btn.wa:hover{box-shadow:0 10px 30px -8px rgba(37,211,102,.6)}}
+.t .ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto;text-align:left}
+.cc{display:flex;align-items:center;gap:14px;padding:18px;border-radius:18px;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.22);min-height:76px;min-width:0;transition:transform .3s var(--e),background .3s}
+.cc small{display:block;font-size:12.5px;opacity:.75}
+.cc b{display:block;font:700 16px Figtree;overflow-wrap:anywhere;line-height:1.3}
+.ci{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center;flex:none}
+.ci.wg{background:#25d366;color:#04230f}
+.ci svg{width:22px;height:22px}
+@media(hover:hover){.cc:hover{transform:translateY(-3px);background:rgba(0,0,0,.32)}}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:80;width:56px;height:56px;border-radius:50%;background:#25d366;color:#04230f;display:grid;place-items:center;box-shadow:0 10px 28px -6px rgba(37,211,102,.6),0 4px 12px rgba(0,0,0,.4);transition:transform .3s var(--e)}
+.fab svg{width:30px;height:30px}.fab:active{transform:scale(.94)}
+@media(hover:hover){.fab:hover{transform:scale(1.08)}}
+
 /* tablet */
 @media(max-width:900px){
 .mn{position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;background:rgba(12,9,10,.98);border:1px solid var(--ln);border-radius:22px;padding:10px 20px;gap:0;display:none;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
@@ -163,7 +181,7 @@ footer{padding:72px 0 max(36px,env(safe-area-inset-bottom))}
 .hero{padding:112px 0 64px;min-height:auto}
 .hg{grid-template-columns:1fr;gap:44px}
 .stk{height:470px;max-width:400px;margin:0 auto;width:100%}
-.t,.t.big{grid-column:span 3;min-height:230px}
+.t,.t.big{grid-column:span 3;min-height:230px}.cg{grid-template-columns:1fr}
 .wk{grid-template-columns:1fr;gap:24px}
 .pr{grid-template-columns:1fr;max-width:480px;margin-inline:auto}
 }
@@ -182,7 +200,7 @@ body{font-size:15.5px}
 .tl{padding-left:56px}.st:before{left:-56px}.tl:before,.tl .fl{left:21px}.st h3{font-size:24px}
 .p{padding:26px 22px}
 .more{padding:22px;flex-direction:column;align-items:stretch;text-align:left}.more .btn{width:100%}
-.fin .btn{width:100%;max-width:340px}
+.cg{grid-template-columns:1fr}footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
 .ft{flex-direction:column}
 .tk span{padding:15px 22px;gap:44px}
 }
@@ -191,11 +209,16 @@ body{font-size:15.5px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.700 6.700 0 01-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.5l-.8-1.900c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.200c0 1.300.9 2.500 1 2.700.1.200 1.800 2.800 4.400 3.900 1.600.7 2.200.7 3 .6.500-.1 1.500-.6 1.700-1.200.2-.6.2-1.100.1-1.200-.1-.1-.3-.2-.6-.3z"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.500" fill="none" stroke="currentColor" stroke-width="1.800"/><circle cx="12" cy="12" r="4.200" fill="none" stroke="currentColor" stroke-width="1.800"/><circle cx="17.300" cy="6.700" r="1.200" fill="currentColor"/></symbol>
+<symbol id="ml" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></g></symbol>
+</defs></svg>
 <div class="bar" id="bar"></div>
 <header class="nv" id="nav"><div class="w nb">
   <a class="logo" href="#top" aria-label="YashWebs home"><b>Y</b>YashWebs</a>
   <nav class="mn" id="mn" aria-label="Main"><a href="#services">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
-  <a class="btn red" href="mailto:theyashwebs@gmail.com?subject=Website%20Project%20Inquiry">Start a project</a>
+  <a class="btn red" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20Website%20Project%20Inquiry" target="_blank" rel="noopener"><svg class="bi"><use href="#wa"/></svg>WhatsApp us</a>
   <button class="bg" id="bg" aria-label="Open menu" aria-expanded="false" aria-controls="mn">☰</button>
 </div></header>
 
@@ -206,7 +229,7 @@ body{font-size:15.5px}
       <div class="pill in"><i></i>Now booking new website projects</div>
       <h1 class="in" style="animation-delay:.1s">Websites that make your business look <span class="grad">premium.</span></h1>
       <p class="lead in" style="animation-delay:.2s">YashWebs builds fast, mobile-first websites that turn visitors into customers. For businesses, restaurants, weddings, birthdays and events.</p>
-      <div class="row in" style="animation-delay:.3s"><a class="btn red" href="#work">See live demos</a><a class="btn out" href="mailto:theyashwebs@gmail.com?subject=I%20want%20a%20website">Get a website</a></div>
+      <div class="row in" style="animation-delay:.3s"><a class="btn wa" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20I%20want%20a%20website" target="_blank" rel="noopener"><svg class="bi"><use href="#wa"/></svg>Chat on WhatsApp</a><a class="btn out" href="#work">See live demos</a></div>
       <div class="stats in" style="animation-delay:.4s"><div><b>5</b><span>live demos</span></div><div><b>₹2K</b><span>celebration sites from</span></div><div><b>100%</b><span>mobile-first</span></div></div>
     </div>
     <div class="stk" aria-hidden="true">
@@ -226,14 +249,14 @@ body{font-size:15.5px}
 <section id="services"><div class="w">
   <div class="hd rv"><h2>Everything you need to look credible online.</h2><p>Every site is designed to be easy to find, easy to trust and easy to contact.</p></div>
   <div class="bento">
-    <article class="t big r rv"><div class="ic">🏪</div><h3>Business websites</h3><p>Professional sites that build credibility and explain what you do in seconds.</p><ul><li>Custom responsive design</li><li>Services and contact sections</li><li>Google-ready structure</li></ul></article>
-    <article class="t big y rv"><div class="ic">🍽️</div><h3>Restaurant and cafe</h3><p>Food-first pages that turn visitors into reservations, calls and walk-ins.</p><ul><li>Menu showcase</li><li>Location and booking button</li><li>Mobile-first experience</li></ul></article>
-    <article class="t rv"><div class="ic">🛒</div><h3>E-commerce</h3><p>Clean stores with a smooth shopping journey.</p><ul><li>Product-focused layouts</li><li>Cart and checkout-ready UI</li></ul></article>
-    <article class="t rv"><div class="ic">🎯</div><h3>Landing pages</h3><p>One page, one goal: get the visitor to act.</p><ul><li>Clear calls to action</li><li>Campaign-ready layouts</li></ul></article>
-    <article class="t rv"><div class="ic">✨</div><h3>Website redesign</h3><p>Modernise an old site without losing your brand.</p><ul><li>Better mobile experience</li><li>Clearer content</li></ul></article>
-    <article class="t rv"><div class="ic">⚡</div><h3>Custom web builds</h3><p>Interactive experiences for brands that need more than a template.</p><ul><li>Custom interactions</li><li>Scalable structure</li></ul></article>
-    <article class="t rv"><div class="ic">🎂</div><h3>Birthday websites</h3><p>Personal mini-sites with photos, messages and countdowns.</p><ul><li>Photos and memories</li><li>Shareable mobile design</li></ul></article>
-    <article class="t rv"><div class="ic">💍</div><h3>Wedding websites</h3><p>Invitations and hubs with schedule, gallery, maps and RSVP.</p><ul><li>Event details</li><li>RSVP and contact</li></ul></article>
+    <article class="t big r rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l1.500-5h15L21 9M3 9v11h18V9M3 9h18M9 20v-6h6v6"/></svg></div><h3>Business websites</h3><p>Professional sites that build credibility and explain what you do in seconds.</p><ul><li>Custom responsive design</li><li>Services and contact sections</li><li>Google-ready structure</li></ul></article>
+    <article class="t big y rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10M17 21V3c-2 1-3 4-3 8h3"/></svg></div><h3>Restaurant and cafe</h3><p>Food-first pages that turn visitors into reservations, calls and walk-ins.</p><ul><li>Menu showcase</li><li>Location and booking button</li><li>Mobile-first experience</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.500 11h10L20 7H6"/><circle cx="9" cy="19" r="1.300"/><circle cx="17" cy="19" r="1.300"/></svg></div><h3>E-commerce</h3><p>Clean stores with a smooth shopping journey.</p><ul><li>Product-focused layouts</li><li>Cart and checkout-ready UI</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.200"/></svg></div><h3>Landing pages</h3><p>One page, one goal: get the visitor to act.</p><ul><li>Clear calls to action</li><li>Campaign-ready layouts</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.800 5.200L19 10l-5.200 1.800L12 17l-1.800-5.200L5 10l5.200-1.800z"/></svg></div><h3>Website redesign</h3><p>Modernise an old site without losing your brand.</p><ul><li>Better mobile experience</li><li>Clearer content</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div><h3>Custom web builds</h3><p>Interactive experiences for brands that need more than a template.</p><ul><li>Custom interactions</li><li>Scalable structure</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v9H4zM3 8h18v3H3zM12 8v12M12 8c-2 0-4-1-3.500-3 .8-2 3.500-.5 3.500 3zM12 8c2 0 4-1 3.500-3-.8-2-3.500-.5-3.500 3z"/></svg></div><h3>Birthday websites</h3><p>Personal mini-sites with photos, messages and countdowns.</p><ul><li>Photos and memories</li><li>Shareable mobile design</li></ul></article>
+    <article class="t rv"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.500-7-10a4 4 0 017-2.500A4 4 0 0119 10c0 5.500-7 10-7 10z"/></svg></div><h3>Wedding websites</h3><p>Invitations and hubs with schedule, gallery, maps and RSVP.</p><ul><li>Event details</li><li>RSVP and contact</li></ul></article>
   </div>
 </div></section>
 
@@ -269,17 +292,17 @@ body{font-size:15.5px}
 <div class="band" id="pricing"><div class="w">
   <div class="hd rv"><h2>Simple prices. No surprises.</h2><p>Clear starting points. Every project can be customised once we understand your needs.</p></div>
   <div class="pr">
-    <article class="p rv"><span class="tag">Special offer</span><h3>Birthday / Wedding</h3><div class="am">₹2K<small> special price</small></div><p>Memorable websites for birthdays, weddings and personal celebrations.</p><ul><li>Custom celebration design</li><li>Photos and memories section</li><li>Messages, events and details</li><li>Mobile-friendly and shareable</li></ul><a class="btn ink" href="mailto:theyashwebs@gmail.com?subject=₹2K%20Birthday%20or%20Wedding%20Website">Get it for ₹2K</a></article>
-    <article class="p f rv"><span class="tag">Most popular</span><h3>Business website</h3><div class="am">₹4K<small> starting</small></div><p>A professional website for businesses that need a strong online presence.</p><ul><li>Custom responsive design</li><li>Professional business sections</li><li>Mobile optimisation</li><li>Contact and enquiry button</li><li>Fast, clean presentation</li></ul><a class="btn gold" href="mailto:theyashwebs@gmail.com?subject=₹4K%20Business%20Website">Start at ₹4K</a></article>
-    <article class="p rv"><span class="tag">3+ pages</span><h3>Multi-page website</h3><div class="am">₹8K<small> starting</small></div><p>Larger websites with more than three pages and deeper functionality.</p><ul><li>3+ page structure</li><li>Premium custom design</li><li>Advanced sections and interactions</li><li>Responsive optimisation</li><li>Custom enquiry flow</li></ul><a class="btn ink" href="mailto:theyashwebs@gmail.com?subject=₹8K%20Multi-Page%20Website">Start at ₹8K</a></article>
+    <article class="p rv"><span class="tag">Special offer</span><h3>Birthday / Wedding</h3><div class="am">₹2K<small> special price</small></div><p>Memorable websites for birthdays, weddings and personal celebrations.</p><ul><li>Custom celebration design</li><li>Photos and memories section</li><li>Messages, events and details</li><li>Mobile-friendly and shareable</li></ul><a class="btn ink" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20%E2%82%B92K%20Birthday%20or%20Wedding%20Website" target="_blank" rel="noopener">Get it for ₹2K</a></article>
+    <article class="p f rv"><span class="tag">Most popular</span><h3>Business website</h3><div class="am">₹4K<small> starting</small></div><p>A professional website for businesses that need a strong online presence.</p><ul><li>Custom responsive design</li><li>Professional business sections</li><li>Mobile optimisation</li><li>Contact and enquiry button</li><li>Fast, clean presentation</li></ul><a class="btn gold" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20%E2%82%B94K%20Business%20Website" target="_blank" rel="noopener">Start at ₹4K</a></article>
+    <article class="p rv"><span class="tag">3+ pages</span><h3>Multi-page website</h3><div class="am">₹8K<small> starting</small></div><p>Larger websites with more than three pages and deeper functionality.</p><ul><li>3+ page structure</li><li>Premium custom design</li><li>Advanced sections and interactions</li><li>Responsive optimisation</li><li>Custom enquiry flow</li></ul><a class="btn ink" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20%E2%82%B98K%20Multi-Page%20Website" target="_blank" rel="noopener">Start at ₹8K</a></article>
   </div>
-  <div class="more rv"><div><h3>Need something bigger?</h3><p>Custom e-commerce, advanced web apps, larger builds and unique experiences.</p></div><a class="btn red" href="mailto:theyashwebs@gmail.com?subject=Custom%20YashWebs%20Project">Let's talk</a></div>
+  <div class="more rv"><div><h3>Need something bigger?</h3><p>Custom e-commerce, advanced web apps, larger builds and unique experiences.</p></div><a class="btn red" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20Custom%20YashWebs%20Project" target="_blank" rel="noopener">Let's talk</a></div>
 </div></div>
 
 <section id="faq"><div class="w">
   <div class="hd rv"><h2>Questions, answered.</h2></div>
   <div class="fq rv">
-    <details><summary>How do I get started?</summary><p>Email theyashwebs@gmail.com with what you do and what you need. We'll reply with the next steps.</p></details>
+    <details><summary>How do I get started?</summary><p>Message us on WhatsApp (+91 70927 22605) or Instagram @theyashwebs with what you do and what you need. We'll reply with the next steps.</p></details>
     <details><summary>Will my website work on phones?</summary><p>Yes. Every site is built mobile-first and tested on small screens.</p></details>
     <details><summary>Can I see examples before I decide?</summary><p>Yes. Open any project in the work section to explore a live demo.</p></details>
     <details><summary>Are the prices fixed?</summary><p>They are starting points. The final price depends on pages, features and custom work, and we confirm it before we begin.</p></details>
@@ -287,14 +310,21 @@ body{font-size:15.5px}
 </div></section>
 
 <section id="contact"><div class="w">
-  <div class="fin rv"><h2>Ready for a website that looks the part?</h2><p>Tell us what you do and what you want your site to achieve. We'll take it from there.</p><a class="btn gold" href="mailto:theyashwebs@gmail.com?subject=New%20YashWebs%20Project">Start a project</a></div>
+  <div class="fin rv"><h2>Let's build a website that looks the part.</h2><p>Tell us what you do and what you want your site to achieve. We usually reply the same day.</p>
+  <div class="cg">
+    <a class="cc" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20I%20want%20a%20website" target="_blank" rel="noopener"><span class="ci wg"><svg><use href="#wa"/></svg></span><span><small>WhatsApp</small><b>+91 70927 22605</b></span></a>
+    <a class="cc" href="https://www.instagram.com/theyashwebs" target="_blank" rel="noopener"><span class="ci"><svg><use href="#ig"/></svg></span><span><small>Instagram</small><b>@theyashwebs</b></span></a>
+    <a class="cc" href="mailto:theyashwebs@gmail.com?subject=New%20YashWebs%20Project"><span class="ci"><svg><use href="#ml"/></svg></span><span><small>Email</small><b>theyashwebs@gmail.com</b></span></a>
+  </div></div>
 </div></section>
 </main>
 
 <footer><div class="w ft">
   <div><a class="logo" href="#top" style="color:#fff"><b>Y</b>YashWebs</a><div style="margin-top:10px;font-size:14px;max-width:300px">Websites for businesses, brands, celebrations and events.</div></div>
-  <div class="fl2"><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="mailto:theyashwebs@gmail.com">theyashwebs@gmail.com</a></div>
+  <div class="fl2"><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="https://www.instagram.com/theyashwebs" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/917092722605" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:theyashwebs@gmail.com">theyashwebs@gmail.com</a></div>
+  <div style="width:100%;font-size:13px;opacity:.7">© 2026 YashWebs. All rights reserved.</div>
 </div></footer>
+<a class="fab" href="https://wa.me/917092722605?text=Hi%20YashWebs%2C%20I%20want%20a%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg><use href="#wa"/></svg></a>
 
 <script>
 const $=id=>document.getElementById(id),nav=$('nav'),mn=$('mn'),bar=$('bar'),tl=$('tl'),bg=$('bg');
