@@ -240,6 +240,52 @@ footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}.ft{flex-directio
 .tk span{font-size:20px;padding:15px 22px;gap:40px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ln>span,.fade,.rv{opacity:1;transform:none}}
+
+/* ===== MOBILE FIT + SMOOTH PATCH ===== */
+html,body{overflow-x:clip;max-width:100%}
+img,svg{max-width:100%}
+body{overscroll-behavior-y:none}
+.bar{width:100%;transform:scaleX(0);transform-origin:0 50%;will-change:transform}
+/* soft gradients instead of heavy blur filters (much smoother scrolling) */
+.bl{filter:none;opacity:.5}
+.b1{background:radial-gradient(circle,var(--pink),transparent 68%)}
+.b2{background:radial-gradient(circle,var(--sky),transparent 68%)}
+.b3{background:radial-gradient(circle,var(--sun),transparent 68%)}
+.fin:before{filter:none;background:radial-gradient(circle,var(--sun),transparent 68%)}
+.c2,.c3{will-change:transform}
+
+@media(max-width:600px){
+:root{--pad:18px}
+section{padding-top:64px}
+.nb{padding:6px 6px 6px 14px}
+.logo{font-size:20px}.logo b{width:30px;height:30px;font-size:15px}
+.hero{padding:96px 0 48px}
+.hero h1{font-size:clamp(34px,10.4vw,52px);margin:18px 0 16px}
+.lead{font-size:16px;margin-bottom:22px}
+.stats{margin-top:30px;gap:14px}.stats b{font-size:30px}.stats span{display:block;font-size:12px;line-height:1.3}
+.stage{height:350px;max-width:340px}
+.c1{height:250px;inset:10px 24px auto 0}.c1 h4{font-size:26px}.c1 .bd{padding:18px}.c1 .gr b{height:50px}
+.c2{width:170px;padding:16px;bottom:20px}.c2 b{font-size:30px}.c2 span{font-size:12.5px}
+.c3{font-size:12.5px;padding:12px 14px}
+.tk{margin:0;transform:none}.tk span{font-size:19px;padding:14px 20px;gap:36px}
+.hd{margin-bottom:28px}.hd h2{font-size:clamp(30px,9vw,40px)}
+.sr{padding:22px;border-radius:24px}.sr h3{font-size:24px;margin-top:20px}
+.wk{padding:22px;gap:20px;border-radius:26px;margin-bottom:16px}
+.wk h3{font-size:clamp(28px,8.6vw,36px);overflow-wrap:anywhere}
+.mk .bd{min-height:170px;padding:20px}
+.fph{max-width:300px;margin:0 auto 12px;box-shadow:10px 10px 0 var(--sun),0 24px 40px -22px rgba(26,21,48,.5)}
+.fo h2{font-size:clamp(38px,12vw,52px)}
+.fst{gap:22px}
+.st{padding:22px}
+.band{padding:56px 0;border-radius:32px}
+.p{padding:26px}.am{font-size:56px}
+.more h3{font-size:24px}
+summary{padding:16px 18px;font-size:17px;min-height:58px}details p{padding:0 18px 18px}
+.fin{padding:40px 18px;border-radius:30px}.fin h2{font-size:clamp(30px,9vw,42px)}
+.cc{padding:14px}
+.fab{width:54px;height:54px}
+}
+
 </style>
 </head>
 <body>
@@ -398,7 +444,7 @@ footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}.ft{flex-directio
 <script>
 const $=id=>document.getElementById(id),mn=$('mn'),bar=$('bar'),bg=$('bg');
 let tick=false;
-function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+'%';tick=false}
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')';tick=false}
 addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
 function setMenu(o){mn.classList.toggle('open',o);bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'}
 bg.onclick=()=>setMenu(!mn.classList.contains('open'));
