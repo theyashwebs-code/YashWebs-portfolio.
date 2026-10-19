@@ -312,7 +312,45 @@ summary{padding:16px 18px;font-size:17px;min-height:58px}details p{padding:0 18p
 .cc{padding:14px}
 .fab{width:54px;height:54px}
 }
-
+/* ===== PROJECTS UPGRADE ===== */
+.flt{display:flex;gap:10px;flex-wrap:wrap;margin:-8px 0 34px}
+.flt button{font:700 14px Figtree;padding:10px 20px;min-height:44px;border-radius:99px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;transition:transform .3s var(--e),background .25s,color .25s}
+.flt button.on{background:var(--ink);color:#fff}
+.flt button:active{transform:scale(.96)}
+@media(hover:hover){.flt button:hover{transform:translateY(-2px)}}
+ 
+.wk{isolation:isolate}
+.wk:before{content:attr(data-n);position:absolute;right:clamp(14px,3vw,40px);bottom:-.22em;font:800 clamp(120px,20vw,260px)/1 "Bricolage Grotesque";letter-spacing:-.06em;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.45);z-index:-1;pointer-events:none}
+.wk.alt{grid-template-columns:1.05fr 1fr}.wk.alt .mk2{order:-1}
+.wk .top{display:flex;align-items:center;gap:12px}
+.live{display:inline-flex;align-items:center;gap:8px;padding:5px 13px;border-radius:99px;background:rgba(255,255,255,.6);font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.live i{width:8px;height:8px;border-radius:50%;background:#19d3a2;box-shadow:0 0 0 0 rgba(25,211,162,.7);animation:pu 1.8s infinite}
+@keyframes pu{70%{box-shadow:0 0 0 9px rgba(25,211,162,0)}100%{box-shadow:0 0 0 0 rgba(25,211,162,0)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{padding:6px 13px;border-radius:99px;border:1.5px solid currentColor;font-size:12.5px;font-weight:700;opacity:.85}
+.wk .btn{gap:12px}.wk .btn b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);transition:transform .35s var(--e)}
+@media(hover:hover){.wk .btn:hover b{transform:translate(3px,-3px) rotate(8deg)}}
+ 
+.mk2{position:relative;align-self:center;display:block;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 40px 60px -26px rgba(26,21,48,.65),0 0 0 6px rgba(255,255,255,.35);transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);transition:transform .9s var(--e)}
+.wk.alt .mk2{transform:perspective(1200px) rotateY(5deg) rotateX(2deg)}
+.mk2 .bar2{display:flex;align-items:center;gap:6px;padding:12px 14px;background:#f6f3fb;border-bottom:1px solid var(--ln)}
+.mk2 .bar2 i{width:10px;height:10px;border-radius:50%;background:var(--pink)}.mk2 .bar2 i+i{background:var(--sun)}.mk2 .bar2 i+i+i{background:var(--mint)}
+.mk2 .url{margin-left:10px;flex:1;min-width:0;padding:5px 14px;border-radius:99px;background:#fff;border:1px solid var(--ln);font-size:12px;font-weight:600;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot{position:relative;aspect-ratio:10/7;background:var(--c);overflow:hidden}
+.shot .fb{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:24px;font:800 clamp(24px,3.6vw,38px)/1.05 "Bricolage Grotesque";letter-spacing:-.04em;color:var(--ink)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--e),opacity .5s;opacity:0}
+.shot img.ok{opacity:1}
+.shot:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,21,48,.25))}
+.vis{position:absolute;left:50%;bottom:18px;translate:-50% 14px;opacity:0;z-index:2;padding:10px 20px;border-radius:99px;background:var(--ink);color:#fff;font-weight:700;font-size:13.5px;transition:all .45s var(--e);white-space:nowrap}
+@media(hover:hover){
+.wk:hover .mk2{transform:perspective(1200px) rotateY(0) rotateX(0) scale(1.03)}
+.wk:hover .shot img{transform:scale(1.08)}
+.wk:hover .vis{opacity:1;translate:-50% 0}
+}
+@media(max-width:900px){.wk.alt{grid-template-columns:1fr}.wk.alt .mk2{order:0}.mk2,.wk.alt .mk2{transform:none}.wk:before{font-size:130px}.vis{opacity:1;translate:-50% 0}}
+.wk.hide{display:none}
+.wk.in{animation:wkin .8s var(--e) both}
+@keyframes wkin{from{opacity:0;transform:translateY(30px) scale(.97)}}
 </style>
 </head>
 <body>
@@ -368,26 +406,13 @@ summary{padding:16px 18px;font-size:17px;min-height:58px}details p{padding:0 18p
 </div></section>
 
 <section id="work"><div class="w">
-  <div class="hd rv"><span class="eye">Selected work</span><h2>Real projects. <em>Live links.</em></h2><p>Each project opens a working website in a new tab.</p></div>
-
-  <article class="wk" style="--i:0;--c:#ffc83d"><div class="tx"><span class="n">01</span><span class="tg">E-commerce · Client project</span><h3>MADHURAVANA Pure Honey</h3><p>A premium honey store with a golden amber look, smooth scrolling, WhatsApp COD ordering, order tracking and a hidden admin panel.</p><a class="btn k" href="https://madhuravana.in/" target="_blank" rel="noopener">View live website ↗</a></div>
-    <div class="mk" style="--c:#ffc83d;--ac:#e08a00" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>Nature's<br><em>golden ritual.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
-
-  <article class="wk" style="--i:1;--c:#ff8fb1"><div class="tx"><span class="n">02</span><span class="tg">Birthday website · Live demo</span><h3>Birthday experience</h3><p>An interactive celebration with memories, animations, surprises and cinematic storytelling.</p><a class="btn k" href="https://yashwebs-birthday.vercel.app/" target="_blank" rel="noopener">View live demo ↗</a></div>
-    <div class="mk" style="--c:#ff8fb1" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>Celebrate.<br><em>Beautifully.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
-
-  <article class="wk" style="--i:2;--c:#7c4dff;--f:#fff"><div class="tx"><span class="n">03</span><span class="tg">Anniversary website · Live demo</span><h3>Anniversary experience</h3><p>A cinematic milestone built around memories, interactive stars and celebration.</p><a class="btn w2" href="https://yashwebs-anniversary-website-demo.vercel.app/" target="_blank" rel="noopener">View live demo ↗</a></div>
-    <div class="mk" style="--c:#b9a2ff;--ac:#7c4dff" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>Mark the<br><em>milestone.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
-
-  <article class="wk" style="--i:3;--c:#19b5ff"><div class="tx"><span class="n">04</span><span class="tg">Restaurant · Live demo</span><h3>European dining</h3><p>A premium restaurant experience with menu presentation, atmosphere, gallery and reservation UI.</p><a class="btn k" href="https://yashwebs-restaurant-demo.vercel.app/" target="_blank" rel="noopener">View live demo ↗</a></div>
-    <div class="mk" style="--c:#8fd8ff;--ac:#0a8fd6" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>Taste.<br><em>Remembered.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
-
-  <article class="wk" style="--i:4;--c:#19d3a2"><div class="tx"><span class="n">05</span><span class="tg">Portfolio website · Live demo</span><h3>Professional portfolio</h3><p>A polished portfolio that presents projects, skills, services and a clear call to action.</p><a class="btn k" href="https://yashwebs-portfolio.vercel.app/" target="_blank" rel="noopener">View live demo ↗</a></div>
-    <div class="mk" style="--c:#8defd2;--ac:#0a9d77" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>Show your<br><em>best work.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
-
-  <article class="wk" style="--i:5;--c:#ff6b4a"><div class="tx"><span class="n">06</span><span class="tg">Author website · Purchased project</span><h3>To the Moon That Listens</h3><p>A commissioned website created for an author and purchased for ₹5,500.</p><a class="btn k" href="https://to-the-moon-that-listens.vercel.app/" target="_blank" rel="noopener">View website ↗</a></div>
-    <div class="mk" style="--c:#ffb09c;--ac:#e0432a" aria-hidden="true"><div class="tp"><i></i><i></i><i></i></div><div class="bd"><h4>To the Moon<br><em>That Listens.</em></h4><div class="l"></div><div class="l"></div><div class="bx"><b></b><b></b></div></div></div></article>
+  <div class="hd rv"><span class="eye">Selected work</span><h2>Real projects. <em>Live links.</em></h2><p>Tap any project to open the working website in a new tab.</p></div>
+  <div class="flt rv" id="flt" role="tablist" aria-label="Filter projects">
+    <button class="on" data-f="all">All</button><button data-f="biz">Business</button><button data-f="cel">Celebrations</button><button data-f="port">Portfolio &amp; Author</button>
+  </div>
+  <div id="wkList"></div>
 </div></section>
+ 
 
 <section id="founder"><div class="w fo">
   <div class="fph rv">
@@ -480,6 +505,49 @@ addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 addEventListener('resize',()=>{if(innerWidth>900)setMenu(false)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -5% 0px'});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+
+/* Edit this list to add or change projects. */
+const PROJECTS=[
+ {cat:'biz',c:'#ffc83d',ac:'#e08a00',tag:'E-commerce · Client project',title:'MADHURAVANA Pure Honey',txt:'A premium honey store with a golden amber look, smooth scrolling, WhatsApp COD ordering, order tracking and a hidden admin panel.',chips:['E-commerce','WhatsApp COD','Admin panel'],url:'https://madhuravana.in/',btn:'View live website'},
+ {cat:'cel',c:'#ff8fb1',tag:'Birthday website · Live demo',title:'Birthday experience',txt:'An interactive celebration with memories, animations, surprises and cinematic storytelling.',chips:['Animations','Memories','Shareable'],url:'https://yashwebs-birthday.vercel.app/',btn:'View live demo'},
+ {cat:'cel',c:'#7c4dff',f:'#fff',tag:'Anniversary website · Live demo',title:'Anniversary experience',txt:'A cinematic milestone built around memories, interactive stars and celebration.',chips:['Interactive stars','Cinematic','Memories'],url:'https://yashwebs-anniversary-website-demo.vercel.app/',btn:'View live demo',light:1},
+ {cat:'biz',c:'#19b5ff',tag:'Restaurant · Live demo',title:'European dining',txt:'A premium restaurant experience with menu presentation, atmosphere, gallery and reservation UI.',chips:['Menu','Gallery','Reservations'],url:'https://yashwebs-restaurant-demo.vercel.app/',btn:'View live demo'},
+ {cat:'port',c:'#19d3a2',tag:'Portfolio website · Live demo',title:'Professional portfolio',txt:'A polished portfolio that presents projects, skills, services and a clear call to action.',chips:['Projects','Skills','Clear CTA'],url:'https://yashwebs-portfolio.vercel.app/',btn:'View live demo'},
+ {cat:'port',c:'#ff6b4a',tag:'Author website · Purchased project',title:'To the Moon That Listens',txt:'A commissioned website created for an author and purchased for ₹5,500.',chips:['Author site','Commissioned','Sold ₹5,500'],url:'https://to-the-moon-that-listens.vercel.app/',btn:'View website'}
+];
+(function(){
+ const list=document.getElementById('wkList'),flt=document.getElementById('flt');
+ list.innerHTML=PROJECTS.map((p,i)=>{
+  const host=p.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+  const shot='https://s0.wp.com/mshots/v1/'+encodeURIComponent(p.url)+'?w=1000&h=700';
+  return '<article class="wk rv" data-cat="'+p.cat+'" data-n="'+String(i+1).padStart(2,'0')+'" style="--c:'+p.c+(p.f?';--f:'+p.f:'')+'">'+
+  '<div class="tx"><div class="top"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="live"><i></i>Live</span></div>'+
+  '<span class="tg">'+p.tag+'</span><h3>'+p.title+'</h3><p>'+p.txt+'</p>'+
+  '<div class="chips">'+p.chips.map(x=>'<span>'+x+'</span>').join('')+'</div>'+
+  '<a class="btn '+(p.light?'w2':'k')+'" href="'+p.url+'" target="_blank" rel="noopener">'+p.btn+' <b>↗</b></a></div>'+
+  '<a class="mk2" href="'+p.url+'" target="_blank" rel="noopener" aria-label="Open '+p.title+'" tabindex="-1">'+
+  '<div class="bar2"><i></i><i></i><i></i><span class="url">🔒 '+host+'</span></div>'+
+  '<div class="shot"><div class="fb">'+p.title+'</div><img alt="Screenshot of '+p.title+'" loading="lazy" src="'+shot+'"><span class="vis">Open website ↗</span></div></a></article>';
+ }).join('');
+ /* show screenshot only if it really loaded (mshots sends a tiny placeholder first) */
+ list.querySelectorAll('.shot img').forEach(im=>{
+  const ok=()=>{if(im.naturalWidth>300)im.classList.add('ok')};
+  im.onload=ok;im.onerror=()=>im.remove();if(im.complete)ok();
+ });
+ list.querySelectorAll('.wk').forEach((el,i)=>{el.style.setProperty('--i',i);if(i%2)el.classList.add('alt');io.observe(el)});
+ flt.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  flt.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  const f=b.dataset.f;let n=0;
+  list.querySelectorAll('.wk').forEach(el=>{
+   const show=f==='all'||el.dataset.cat===f;
+   el.classList.toggle('hide',!show);el.classList.remove('in','alt');
+   if(show){el.style.setProperty('--i',n);if(n%2)el.classList.add('alt');n++;el.classList.add('show');void el.offsetWidth;el.classList.add('in')}
+  });
+ });
+})();
+
 </script>
 </body>
 </html>
