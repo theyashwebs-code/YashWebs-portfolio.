@@ -66,8 +66,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fffaf4;--ink:#1a1530;--mu:#6b6580;--ln:rgba(26,21,48,.1);--pink:#ff4f7b;--vio:#7c4dff;--sky:#19b5ff;--sun:#ffc83d;--mint:#19d3a2;--org:#ff8a3d;--g:linear-gradient(120deg,var(--pink),var(--org) 55%,var(--sun));--g2:linear-gradient(135deg,var(--vio),var(--pink));--e:cubic-bezier(.22,1,.36,1);--pad:clamp(20px,5vw,40px)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -494,7 +493,7 @@ summary:after{margin-left:auto}
 
 <section id="work"><div class="w">
   <div class="hd rv"><span class="eye">Selected work</span><h2>Real projects. <em>Live links.</em></h2><p>Tap any project to open the working website in a new tab.</p></div>
-  <div class="flt rv" id="flt" role="group" aria-label="Filter projects">
+  <div class="flt rv" id="flt" role="tablist" aria-label="Filter projects">
     <button class="on" data-f="all">All</button><button data-f="biz">Business</button><button data-f="cel">Celebrations</button><button data-f="port">Portfolio &amp; Author</button>
   </div>
   <div id="wkList"></div>
@@ -607,7 +606,7 @@ const PROJECTS=[
  const list=document.getElementById('wkList'),flt=document.getElementById('flt');
  list.innerHTML=PROJECTS.map((p,i)=>{
   const host=p.url.replace(/^https?:\/\//,'').replace(/\/$/,'');
-  const shot='https://s0.wp.com/mshots/v1/'+encodeURIComponent(p.url)+'?w=800&h=560';
+  const shot='https://s0.wp.com/mshots/v1/'+encodeURIComponent(p.url)+'?w=1000&h=700';
   return '<article class="wk rv" data-cat="'+p.cat+'" data-n="'+String(i+1).padStart(2,'0')+'" style="--c:'+p.c+(p.f?';--f:'+p.f:'')+'">'+
   '<div class="tx"><div class="top"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="live"><i></i>Live</span></div>'+
   '<span class="tg">'+p.tag+'</span><h3>'+p.title+'</h3><p>'+p.txt+'</p>'+
@@ -615,7 +614,7 @@ const PROJECTS=[
   '<a class="btn '+(p.light?'w2':'k')+'" href="'+p.url+'" target="_blank" rel="noopener">'+p.btn+' <b>↗</b></a></div>'+
   '<a class="mk2" href="'+p.url+'" target="_blank" rel="noopener" aria-label="Open '+p.title+'" tabindex="-1">'+
   '<div class="bar2"><i></i><i></i><i></i><span class="url">🔒 '+host+'</span></div>'+
-  '<div class="shot"><div class="fb">'+p.title+'</div><img alt="Screenshot of '+p.title+'" loading="lazy" decoding="async" fetchpriority="low" src="'+shot+'"><span class="vis">Open website ↗</span></div></a></article>';
+  '<div class="shot"><div class="fb">'+p.title+'</div><img alt="Screenshot of '+p.title+'" loading="lazy" src="'+shot+'"><span class="vis">Open website ↗</span></div></a></article>';
  }).join('');
  /* show screenshot only if it really loaded (mshots sends a tiny placeholder first) */
  list.querySelectorAll('.shot img').forEach(im=>{
@@ -630,7 +629,7 @@ const PROJECTS=[
   list.querySelectorAll('.wk').forEach(el=>{
    const show=f==='all'||el.dataset.cat===f;
    el.classList.toggle('hide',!show);el.classList.remove('in','alt');
-   if(show){el.style.setProperty('--i',n);if(n%2)el.classList.add('alt');n++;el.classList.add('show');requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('in')))}
+   if(show){el.style.setProperty('--i',n);if(n%2)el.classList.add('alt');n++;el.classList.add('show');void el.offsetWidth;el.classList.add('in')}
   });
  });
 })();
